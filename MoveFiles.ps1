@@ -36,3 +36,36 @@ Remove-Item $tempFinalFolder -RECURSE
 
 #Move ZIP Archive to Network Path
 Move-Item $zipTo -destination "\\Network_PATH"
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+#Folder Path to Check
+$SuccessPath = "C:\Folder_Name\*.*"
+
+#Get Date and Number of Days
+$Max_days = "-30"
+$Curr_date = get-date
+$files = Get-ChildItem -Path $SuccessPath | Where{$_.LastWriteTime -lt ($Curr_date).AddDays($Max_days)}
+
+#Email Param
+$username = "alert@example.com"
+$password = Get-Content C:\security\string.txt | ConvertTo-SecureString
+$cred = new-object -typename System.Management.Automation.PSCredential ` -argumentlist $username, $password
+$localIpAddress = $(ipconfig | where {$_ -match 'IPv4.+\s(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' } | out-null; $Matches[1])
+[string]$messagebody =""
+[string]$title ="Success TransActions been Archived for more than 30 days in $localIpAddress in $env:computername"
+$portno = "587"
+$smtpsrv = "mail.example.com"
+$smtpto = "it-support@example.com"
+$smtpfrom ="alert@example.com"
+
+#Destination to Move the Files
+$dest = "\\Network_PATH"
+
+if ($files.Count) {
+    Move-Item -path $files -Destination $dest
+    foreach ($file in $files) {[string]$messagebody += $file.Name + "`r`n"}
+    Send-MailMessage -To $smtpto -From $smtpfrom -port $portno -SmtpServer $smtpsrv -Credential $cred -Subject $title -Body $messagebody
+}
+
+    
