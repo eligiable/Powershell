@@ -1,6 +1,5 @@
-#Folders to Check
+#Folder to Check
 $inboundPath = "C:\Folder_Name\*.xml"
-#$failedPath = "C:\Folder_Name\"
 
 $Max_mins = "-5"
 $Curr_date = get-date
