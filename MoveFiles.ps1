@@ -67,5 +67,3 @@ if ($files.Count) {
     foreach ($file in $files) {[string]$messagebody += $file.Name + "`r`n"}
     Send-MailMessage -To $smtpto -From $smtpfrom -port $portno -SmtpServer $smtpsrv -Credential $cred -Subject $title -Body $messagebody
 }
-
-    
