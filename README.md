@@ -32,6 +32,9 @@ Powershell Scripts to Automate
 ### Move Files
 > Powershell Script to Compress and Move Files to a Network Location based on Time and send Email Alert.
 
+### New PC Setup
+> Powershell Script to automatically install required applications for an office environment.
+
 ### Search Files in Multiple Folders
 
 > Powershell Script to Search for Files in Multiple Folders and if File Exist and send Email Alert.
