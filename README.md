@@ -5,6 +5,9 @@ Powershell Scripts to Automate
 
 > Powershell Script to automatically get all the call logged and store in database from Avaya IP Office.
 
+### Basic New PC Setup
+> Powershell Script to automatically install required applications for an office environment.
+
 ### Check Services
 
 > Powershell Script to Monitor Windows Server Running Services and send Email Alert.
