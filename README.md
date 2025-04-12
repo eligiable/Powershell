@@ -3,61 +3,52 @@ Powershell Scripts to Automate
 
 ### Automated Server Shutdown
 
-> Powershell Script to automatically shut down servers on Weekends (Sat and Sun) and at desired times.
+> This script shuts down servers: Every weekend (Saturday and Sunday) and at specified times during weekdays (configurable) and can be scheduled via Task Scheduler to run daily.
 
-### Avaya Call Logging
+### Avaya SMDR Optimized
 
-> Powershell Script will automatically get all the calls logged and stored in the database from Avaya IP Office.
+> This script connects to Avaya IP Office SMDR feed, logs call data to files, and optionally inserts records into a MySQL database with enhanced error handling.
 
-### Basic New PC Setup
-> Powershell Script to automatically install required applications for an office environment.
+### Disk Space Monitor
 
-### Check Services
+> Checks all logical drives with type 3 (fixed disks) and sends an email alert if free space is 10% or less.
 
-> Powershell Script to Monitor Windows Server Running Services and Send Email Alert.
+### File Archive Utility.ps1
 
-### Check if the File Exists
+> This script archives files older than 30 days from specified folders, compresses them, moves them to network locations, and sends email notifications.
 
-> Powershell Script to Check Files Existing in a Specific Folder and Send Email Alert.
+### File Change Monitor
 
-### Compare File Size
+> This script compares files in two directories, sends email alerts if files haven't changed, manages file synchronization, and restarts a specified service.
 
-> Powershell Script to Compare File Size based on Time and if not Change send Email Alert.
+### File Cleanup With Notification
 
-### Delete Files from Folder
+> This script deletes files older than specified days and sends email notifications. Features include logging, error handling, and detailed reporting.
 
-> Powershell Script to Delete Files from Folder based on Time and Send Email Alert.
+### File Monitor Enhanced
 
-### Get Disk Space
+> Monitors a folder for recently modified XML files, restarts a service if found, and sends email alerts with enhanced logging and error handling.
 
-> Powershell Script to Check Disk Space based on Time and Send Email Alert.
+### Log Monitor
 
-### Monitor Logs
+> Checks log files for specific error patterns, sends email alerts when found, restarts affected websites, and archives log files with timestamps.
 
-> Powershell Script to Monitor Log Files based on String Criteria and Send Email Alert.
+### Multi Folder FTP Upload
 
-### Move Files
-> Powershell Script to Compress and Move Files to a Network Location based on Time and Send Email Alerts.
+> This script uploads files from multiple local directories to their respective FTP locations. It includes error handling, logging, and configuration in a more maintainable format.
 
-### New PC Setup
-> Powershell Script to automatically install required applications for an office environment.
+### S3 Sync Enhanced
 
-### Search Files in Multiple Folders
-
-> Powershell Script to Search for Files in Multiple Folders and if a File exists send an Email Alert.
+> This script synchronizes specified local folders to an S3 bucket using CloudBerry Explorer. It includes email notifications, detailed logging, and improved error handling.
 
 ### Send Email Using Excel
 
 > A VBA Excel file that can send emails to multiple users mentioned in the sheet via Outlook.
 
-### Send Email Attachment
+### Send Recent File Attachments
 
-> Powershell Script to Search for Files in Folders and Attach them via Email Alert.
+> This script checks specified folders for files modified in the last 24 hours, collects them, and sends them via email with a summary of the files found.
 
-### Sync 2 AWS S3
+### Service Monitor Enhanced
 
-> Powershell Script to Sync Multiple Folders to AWS S3 using CloudBerry Explorer and send Email Alert.
-
-### Upload to FTP
-
-> Powershell Script to Upload Files from Multiple Folders to Individual Folders on FTP. This Script needs Improvement.
+> Monitors specified services, sends email alerts when services are stopped, and automatically attempts to restart them with enhanced logging and error handling.
